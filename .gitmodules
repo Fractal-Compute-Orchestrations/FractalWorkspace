@@ -1,0 +1,6 @@
+[submodule "FractalCore"]
+	path = FractalCore
+	url = ./FractalCore
+[submodule "FractalApp/FractalAndroid"]
+	path = FractalApp/FractalAndroid
+	url = P:/Fractal/FractalApp/FractalAndroid
