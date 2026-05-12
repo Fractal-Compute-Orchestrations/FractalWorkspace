@@ -1,6 +1,7 @@
 [submodule "FractalCore"]
 	path = FractalCore
-	url = ./FractalCore
+	url = https://github.com/Fractal-Compute-Orchestrations/FractalCore.git
+
 [submodule "FractalApp/FractalAndroid"]
 	path = FractalApp/FractalAndroid
-	url = P:/Fractal/FractalApp/FractalAndroid
+	url = https://github.com/Fractal-Compute-Orchestrations/FractalAndroid.git
