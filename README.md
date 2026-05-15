@@ -13,7 +13,7 @@
 
 **A unified ecosystem for large-scale federated learning, bridging the gap between centralized model evolution and decentralized edge intelligence.**
 
-[Philosophy](#-philosophy) • [Architecture](#-architecture-overview) • [System Flow](#-system-workflow) • [Core Modules](#-module-breakdown) • [Onboarding](#-getting-started)
+[Philosophy](#-philosophy) • [Design Presentation](https://www.behance.net/gallery/221459335/Fractal) • [Architecture](#-architecture-overview) • [System Flow](#-system-workflow) • [Core Modules](#-module-breakdown) • [Onboarding](#-getting-started)
 
 </div>
 
