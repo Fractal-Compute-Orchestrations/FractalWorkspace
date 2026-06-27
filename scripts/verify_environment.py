@@ -66,6 +66,16 @@ def check_huggingface_connection() -> bool:
         print("    -> Check your network proxy or internet settings.")
         return False
 
+def check_firebase_credentials() -> bool:
+    print("[*] Checking Firebase Service Account file...", end=" ")
+    service_account = Path("FractalCore/secrets/firebase/service-account.json")
+    if not service_account.exists():
+        print("[WARNING] (service-account.json is missing)")
+        print("    -> Note: Firebase features will not be initialized.")
+        return False
+    print("[OK]")
+    return True
+
 def main():
     print("=========================================")
     print("      FRACTAL ENVIRONMENT VALIDATOR      ")
@@ -76,6 +86,7 @@ def main():
     success &= check_submodules()
     check_env_files() # Non-blocking warning
     check_huggingface_connection() # Non-blocking warning
+    check_firebase_credentials() # Non-blocking warning
     
     print("=========================================")
     if success:
