@@ -4,6 +4,8 @@ scripts/verify_environment.py
 =============================
 Validation utility for the Fractal project workspace.
 Checks python dependencies, submodule initialization, and environment keys.
+
+Signed commits verification test.
 """
 
 from __future__ import annotations
