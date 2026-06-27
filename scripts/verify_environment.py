@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import os
 import sys
+import urllib.request
 from pathlib import Path
 
 def check_python_version() -> bool:
@@ -53,6 +54,18 @@ def check_env_files() -> bool:
     print("[OK]")
     return True
 
+def check_huggingface_connection() -> bool:
+    print("[*] Verifying Hugging Face Connection...", end=" ")
+    try:
+        # Check connection to Hugging Face
+        urllib.request.urlopen("https://huggingface.co", timeout=5)
+        print("[OK]")
+        return True
+    except Exception:
+        print("[WARNING] (Could not connect to huggingface.co)")
+        print("    -> Check your network proxy or internet settings.")
+        return False
+
 def main():
     print("=========================================")
     print("      FRACTAL ENVIRONMENT VALIDATOR      ")
@@ -62,6 +75,7 @@ def main():
     success &= check_python_version()
     success &= check_submodules()
     check_env_files() # Non-blocking warning
+    check_huggingface_connection() # Non-blocking warning
     
     print("=========================================")
     if success:
