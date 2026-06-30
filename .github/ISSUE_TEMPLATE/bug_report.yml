@@ -1,4 +1,4 @@
-name: 🐛 Bug Report
+name:  [BUG]  Bug Report
 description: Create a report to help us improve Fractal
 labels: ["bug"]
 body:

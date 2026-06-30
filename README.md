@@ -19,7 +19,7 @@
 
 ---
 
-## 🌌 Philosophy
+##  Philosophy
 
 Computation is most powerful when it mirrors life: **distributed, adaptive, and collective**. 
 
@@ -29,7 +29,7 @@ In this ecosystem, mobile devices are transformed into autonomous compute nodes 
 
 ---
 
-## 🏗 Architecture Overview
+##  Architecture Overview
 
 Fractal is architected as a hierarchical orchestration system. The root workspace manages the synergy between the **FractalCore** (Brain) and the **FractalAndroid** (Edge).
 
@@ -64,7 +64,7 @@ graph TD
 
 ---
 
-## 🔄 System Workflow
+##  System Workflow
 
 The lifecycle of a training task follows a fractal loop of distribution and convergence.
 
@@ -98,7 +98,7 @@ sequenceDiagram
 
 ---
 
-## 📦 Repository Structure
+##  Repository Structure
 
 The project is organized to maintain strict separation of concerns between server orchestration and edge execution.
 
@@ -122,16 +122,16 @@ The project is organized to maintain strict separation of concerns between serve
 
 ---
 
-## 🛠 Module Breakdown
+##  Module Breakdown
 
-### 🧠 FractalCore (The Orchestrator)
+###  FractalCore (The Orchestrator)
 The backend engine designed for multi-tenant isolation and deterministic aggregation.
 *   **Tenant System**: Independent data silos and compute budgets per user.
 *   **TFLOPs Budgeting**: Real-time monitoring of compute expenditures.
 *   **FedAvg Engine**: High-performance weight averaging using TensorFlow.
 *   **Firestore Integration**: Real-time synchronization of device registries and rewards.
 
-### 📱 FractalAndroid (The Edge Node)
+###  FractalAndroid (The Edge Node)
 A resource-aware execution environment for mobile devices.
 *   **Synthesis Engine**: Dynamically builds the training environment based on server metadata.
 *   **Telemetry Gating**: Monitors battery status, network type, and thermals to protect the host.
@@ -139,7 +139,7 @@ A resource-aware execution environment for mobile devices.
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 *   **Python 3.10+** (for Core)
@@ -164,7 +164,7 @@ This repository uses a private sub-module for sensitive keys and configurations.
 
 ---
 
-## 🛡 Security & Privacy
+##  Security & Privacy
 *   **Zero-Data Transfer**: User data never leaves the Android device. Only model weights are transmitted.
 *   **Tenant Isolation**: Each tenant's data and models are physically and logically separated.
 *   **Token Authentication**: X-Auth-Token based isolation for session security.
