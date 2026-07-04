@@ -23,9 +23,9 @@
 
 Computation is most powerful when it mirrors life: **distributed, adaptive, and collective**. 
 
-**Fractal** is an exploration of "Empathetic Engineering." The system recognizes that every edge device is more than just a processor—it is a tool serving a human being. By moving training to the data, rather than the data to the server, Fractal respects the privacy of the individual while empowering the collective intelligence of the grid. 
+**Fractal** is an exploration of "Empathetic Engineering." The system recognizes that every edge device is more than just a processor-it is a tool serving a human being. By moving training to the data, rather than the data to the server, Fractal respects the privacy of the individual while empowering the collective intelligence of the grid. 
 
-In this ecosystem, mobile devices are transformed into autonomous compute nodes that "feel" their environment—backing off when thermals rise or battery drops—ensuring that the machine's progress never comes at the cost of the human experience.
+In this ecosystem, mobile devices are transformed into autonomous compute nodes that "feel" their environment-backing off when thermals rise or battery drops-ensuring that the machine's progress never comes at the cost of the human experience.
 
 ---
 
