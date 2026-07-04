@@ -11,9 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
       with:
         submodules: recursive
+        token: ${{ secrets.SUBMODULE_TOKEN }}
 
     - name: Set up Python
       uses: actions/setup-python@v5
