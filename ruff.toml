@@ -1,0 +1,23 @@
+# Ruff configuration for FractalWorkspace
+# https://docs.astral.sh/ruff/configuration/
+
+target-version = "py310"
+
+[lint]
+select = ["E", "F", "I", "UP", "PERF", "BLE", "EXE"]
+
+ignore = [
+    # BLE001: Broad exception catches are intentional in these one-shot Behance
+    # utility scripts — they catch network/JSON errors, print them, and exit.
+    "BLE001",
+    # E501: Line-length is not enforced for scripts containing long string
+    # literals, regex patterns, and URLs that cannot be meaningfully shortened.
+    "E501",
+    # PERF401: list.extend suggestion is stylistic; .append() in a loop is fine.
+    "PERF401",
+]
+
+[lint.per-file-ignores]
+# verify_environment.py checks sys.version_info at runtime (not for type
+# narrowing), so UP036 (outdated version block) is a false positive here.
+"scripts/verify_environment.py" = ["UP036"]

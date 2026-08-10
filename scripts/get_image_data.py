@@ -1,6 +1,6 @@
-import urllib.request
-import re
 import json
+import re
+import urllib.request
 
 url = 'https://www.behance.net/gallery/221459335/Fractal'
 req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
@@ -31,7 +31,7 @@ try:
                         print(f"  src: {src}")
                         print(f"  alt: {alt}")
                         print(f"  caption: {caption}")
-                        print(f"  sizes:")
+                        print("  sizes:")
                         for size_obj in img_sizes:
                             print(f"    {size_obj.get('size')}: {size_obj.get('url')}")
                         image_idx += 1
@@ -42,6 +42,6 @@ try:
                 break
             except Exception as e:
                 print(f"Error parsing JSON: {e}")
-except Exception as e:
+except Exception:
     import traceback
     traceback.print_exc()

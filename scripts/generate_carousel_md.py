@@ -1,7 +1,6 @@
-import urllib.request
-import re
 import json
-import os
+import re
+import urllib.request
 
 url = 'https://www.behance.net/gallery/221459335/Fractal'
 req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
@@ -73,7 +72,7 @@ try:
                 # Now generate the Markdown content
                 md_lines = []
                 md_lines.append("# Behance Fractal Project Carousel Preview\n")
-                md_lines.append(f"This document provides a live preview of the design images from the Behance project: [Fractal](https://www.behance.net/gallery/221459335/Fractal).\n")
+                md_lines.append("This document provides a live preview of the design images from the Behance project: [Fractal](https://www.behance.net/gallery/221459335/Fractal).\n")
                 md_lines.append("## Interactive Carousel\n")
                 md_lines.append("Use the arrows below to flip through the design slides:\n")
                 md_lines.append("````carousel")

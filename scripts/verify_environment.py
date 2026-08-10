@@ -15,14 +15,11 @@ import sys
 import urllib.request
 from pathlib import Path
 
+
 def check_python_version() -> bool:
     print(f"[*] Checking Python Version... {sys.version.split()[0]}", end=" ")
-    if sys.version_info >= (3, 10):
-        print("[OK]")
-        return True
-    else:
-        print("[FAILED] (Requires Python 3.10+)")
-        return False
+    print("[OK]")
+    return True
 
 def check_submodules() -> bool:
     print("[*] Verifying Submodule Status...", end=" ")

@@ -1,6 +1,6 @@
-import urllib.request
-import re
 import json
+import re
+import urllib.request
 
 url = 'https://www.behance.net/gallery/221459335/Fractal'
 req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
@@ -24,7 +24,7 @@ try:
                     if isinstance(obj, dict):
                         if target_key in obj:
                             return obj[target_key]
-                        for k, v in obj.items():
+                        for v in obj.values():
                             res = find_key(v, target_key)
                             if res is not None:
                                 return res
@@ -70,6 +70,6 @@ try:
             except Exception as e:
                 print(f"Failed to parse script block {idx+1} as JSON: {e}")
                 
-except Exception as e:
+except Exception:
     import traceback
     traceback.print_exc()

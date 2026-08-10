@@ -1,6 +1,6 @@
-import urllib.request
-import re
 import json
+import re
+import urllib.request
 
 url = 'https://www.behance.net/gallery/221459335/Fractal'
 req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
@@ -34,6 +34,6 @@ try:
                 break
             except Exception as e:
                 print(f"Error parsing JSON: {e}")
-except Exception as e:
+except Exception:
     import traceback
     traceback.print_exc()
