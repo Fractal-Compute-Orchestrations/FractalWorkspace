@@ -49,6 +49,6 @@ try:
                 print("Start:", content[:200])
                 print("End:", content[-200:])
                 
-except Exception as e:
+except Exception:
     import traceback
     traceback.print_exc()

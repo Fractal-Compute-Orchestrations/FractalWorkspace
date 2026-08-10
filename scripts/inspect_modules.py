@@ -21,7 +21,7 @@ try:
                 for m_idx, mod in enumerate(modules):
                     print(f"Module {m_idx+1}: type={mod.get('type')}, keys={list(mod.keys())}")
                     if 'sizes' in mod:
-                        print(f"  has sizes")
+                        print("  has sizes")
                     # If type is 'media_grid', 'image', 'embed', etc.
                     # Let's inspect further
                     if 'components' in mod:
@@ -35,6 +35,6 @@ try:
                 break
             except Exception as e:
                 print(f"Error: {e}")
-except Exception as e:
+except Exception:
     import traceback
     traceback.print_exc()

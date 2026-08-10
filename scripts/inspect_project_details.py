@@ -39,6 +39,6 @@ try:
                 break
             except Exception as e:
                 print(f"Error parsing JSON: {e}")
-except Exception as e:
+except Exception:
     import traceback
     traceback.print_exc()
