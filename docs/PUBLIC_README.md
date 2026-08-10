@@ -159,9 +159,9 @@ This repository uses a private sub-module for sensitive keys and configurations.
 
 ## Security and Privacy
 
-- **Zero-Data Transfer**: User data never leaves the Android device. Only model weights are transmitted.
-- **Tenant Isolation**: Each tenant's data and models are physically and logically separated.
-- **Token Authentication**: X-Auth-Token based isolation for session security.
+- **Zero-Data Transfer**: Raw training data never leaves the Android device. Only locally-computed weight checkpoints are transmitted — the server never sees the underlying dataset.
+- **X-Auth-Token Authentication**: Every protected endpoint is guarded by `_get_auth()`, which resolves identity exclusively from the `X-Auth-Token` request header. Tokens are issued via `secrets.token_hex(32)` at login, stored server-side in a thread-safe `_token_store`, and revoked on logout. No cookie fallback exists — a deliberate design decision that prevents session bleed across browser tabs; each tab holds its own token in `sessionStorage`.
+- **Tenant Filesystem Isolation**: Each tenant's training data, upload checkpoints, and global model checkpoint reside under a physically separate directory tree (`data/tenants/{username}/`). There is no shared mutable path between tenants at the filesystem level.
 
 ---
 
@@ -183,9 +183,9 @@ flowchart LR
 
 ### Request Security and Routing
 
-- **Authentication**: All tenant and admin interactions are governed by a strict X-Auth-Token lifecycle.
-- **Isolation**: Multi-tenancy is enforced at the filesystem and database levels; data silos are physically separated.
-- **Verification**: Client uploads are validated against task identifiers to prevent stale weight injection.
+- **X-Auth-Token Authentication**: All tenant and admin interactions are authenticated via `_get_auth()`, which reads the `X-Auth-Token` request header exclusively. Tokens (`secrets.token_hex(32)`) are issued at login, invalidated on logout, and stored in a thread-safe in-memory store backed by `tokens.json`. The deliberate absence of a cookie fallback is what enforces tab-level session isolation.
+- **Tenant Filesystem Isolation**: Multi-tenancy is enforced at the filesystem level. Each tenant owns a private directory subtree (`data/tenants/{username}/bins`, `uploads`, `global_model`). There is no shared mutable state between tenants on disk.
+- **Task-ID–Bound Upload Validation**: Client checkpoint uploads are cross-referenced against `_global_task_tenant_map` keyed by `task_Id`. Uploads with an unknown or already-consumed task ID are rejected with `400 Unknown task_Id`, preventing stale or replayed weight injection.
 
 ### FractalCore Repository Structure
 

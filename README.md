@@ -165,9 +165,10 @@ This repository uses a private sub-module for sensitive keys and configurations.
 ---
 
 ##  Security & Privacy
-*   **Zero-Data Transfer**: User data never leaves the Android device. Only model weights are transmitted.
-*   **Tenant Isolation**: Each tenant's data and models are physically and logically separated.
-*   **Token Authentication**: X-Auth-Token based isolation for session security.
+*   **Zero-Data Transfer**: Raw training data never leaves the Android device. Only locally-computed weight checkpoints are transmitted to the server — the server never sees the underlying dataset.
+*   **X-Auth-Token Authentication**: Every protected endpoint is guarded by `_get_auth()`, which resolves identity exclusively from the `X-Auth-Token` request header. Tokens are issued via `secrets.token_hex(32)` at login, stored server-side in a thread-safe `_token_store`, and revoked on logout. No cookie fallback exists — a deliberate design decision that prevents session bleed across browser tabs, as each tab holds its own token in `sessionStorage`.
+*   **Tenant Filesystem Isolation**: Each tenant's training data, upload checkpoints, and global model checkpoint are stored under a physically separate directory tree (`data/tenants/{username}/`). There is no shared mutable path between tenants at the filesystem level.
+*   **Task-ID–Bound Upload Validation**: Client checkpoint uploads are validated against a `_global_task_tenant_map` keyed by `task_Id`. Uploads referencing an unknown or already-consumed task ID are rejected with `400 Unknown task_Id`, preventing stale or replayed weight injection.
 
 ---
 
