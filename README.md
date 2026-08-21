@@ -7,13 +7,14 @@
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=flat-square)](LICENSE)
 [![Platform](https://img.shields.io/badge/Platform-Android_%7C_Python-6E44FF.svg?style=flat-square)](#)
+[![Design](https://img.shields.io/badge/Design_Case_Study-Behance-0057ff.svg?logo=behance&style=flat-square)](https://www.behance.net/gallery/221459335/Fractal)
 [![Status](https://img.shields.io/badge/Status-Active_Development-success.svg?style=flat-square)](#)
 [![Architecture](https://img.shields.io/badge/Architecture-Federated_Learning_%26_Pipeline_Parallelism-orange.svg?style=flat-square)](#)
 [![Author](https://img.shields.io/badge/Maintained_by-Ahmad_Hassan_(B--Ted)-red.svg?style=flat-square)](https://github.com/Fractal-Compute-Orchestrations)
 
 **A unified distributed systems framework bridging centralized model orchestration with decentralized edge intelligence.**
 
-[Overview](#overview) | [Architecture](#system-architecture) | [Core Paradigms](#operational-paradigms) | [Repository Topology](#repository-topology) | [Getting Started](#getting-started) | [Security](#security-and-privacy)
+[Overview](#overview) | [Design Case Study](https://www.behance.net/gallery/221459335/Fractal) | [Architecture](#system-architecture) | [Core Paradigms](#operational-paradigms) | [Repository Topology](#repository-topology) | [Getting Started](#getting-started) | [Security](#security-and-privacy)
 
 ---
 </div>

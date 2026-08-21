@@ -5,10 +5,11 @@
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=flat-square)](../LICENSE)
 [![Platform](https://img.shields.io/badge/Platform-Android_%7C_Python-6E44FF.svg?style=flat-square)](#)
+[![Design](https://img.shields.io/badge/Design_Case_Study-Behance-0057ff.svg?logo=behance&style=flat-square)](https://www.behance.net/gallery/221459335/Fractal)
 [![Status](https://img.shields.io/badge/Status-Active_Development-success.svg?style=flat-square)](#)
 [![Architecture](https://img.shields.io/badge/Architecture-Federated_Learning_%26_Pipeline_Parallelism-orange.svg?style=flat-square)](#)
 
-[System Architecture](#system-architecture) | [Core Subsystems](#core-subsystems) | [Data Contracts](#data-contracts-and-network-protocols) | [Submodule Topology](#submodule-topology) | [Security](#security-architecture)
+[System Architecture](#system-architecture) | [Design Case Study](https://www.behance.net/gallery/221459335/Fractal) | [Core Subsystems](#core-subsystems) | [Data Contracts](#data-contracts-and-network-protocols) | [Submodule Topology](#submodule-topology) | [Security](#security-architecture)
 
 ---
 </div>
