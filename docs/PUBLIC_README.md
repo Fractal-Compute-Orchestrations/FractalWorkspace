@@ -36,8 +36,8 @@ graph TD
         AppUI["Telemetry Dashboard & Control UI"]
         TelemetryGate["Hardware Telemetry Controller"]
         TFLiteRunner["TFLite On-Device Trainer"]
-        ExecuTorchRunner["Memory-Mapped PTE Inference Runner"]
-        NetworkTransmitter["TLS Checkpoint & Activation Transmitter"]
+        DataManager["Direct ByteBuffer Batch Parser"]
+        NetworkTransmitter["TLS Checkpoint & Status Transmitter"]
     end
 
     subgraph StorageTier ["Storage & State Layer"]
@@ -56,9 +56,8 @@ graph TD
 
     AppUI --> TelemetryGate
     TelemetryGate --> TFLiteRunner
-    TelemetryGate --> ExecuTorchRunner
+    TFLiteRunner --> DataManager
     TFLiteRunner --> NetworkTransmitter
-    ExecuTorchRunner --> NetworkTransmitter
 
     NetworkTransmitter <-->|"HTTPS / TLS (Task Fetch & Weight Sync)"| API
 ```
@@ -71,7 +70,7 @@ graph TD
 
 - **Multi-Tenant Sandboxing**: Enforces physical filesystem isolation per tenant (`data/tenants/{username}/`). Datasets, binary segments, and checkpoint uploads remain physically and structurally segregated in independent directory trees.
 - **Federated Averaging Engine**: Implements synchronous and asynchronous model parameter aggregation. Once threshold uploads are collected for an active round, parameter tensors are averaged and serialized into the new global model checkpoint.
-- **Model Slicer & Graph Lowering**: Transforms large foundation models (such as Llama 3 8B) into 32 atomic INT4 layer partitions (`layer_[N].pte` <= 150MB) targeted for ARM NEON acceleration via XNNPACK.
+- **Model Slicer & Graph Lowering**: Transforms large foundation models into atomic INT4 layer partitions (`layer_[N].pte` <= 150MB) targeted for ARM NEON acceleration via XNNPACK.
 - **TFLOPs Budgeting & Liquid Rewards**: Tracks client contributions against session compute budgets, crediting rewards to device hardware profiles in Firestore.
 
 ### 2. FractalAndroid: Edge Compute Node
@@ -80,7 +79,7 @@ graph TD
   - Battery level < 50% (unless actively connected to AC power).
   - Battery temperature > 40.0 degrees Celsius.
   - Device enters active interactive user foreground demands.
-- **Memory-Mapped Inference Execution (`mmap`)**: Uses zero-copy memory mapping for ExecuTorch `.pte` model chunks, avoiding Dalvik/ART heap overhead and preventing Android Low Memory Killer (LMK) aborts.
+- **Direct Buffer Batch Parsing (`DataManager`)**: Uses direct ByteBuffers for efficient binary dataset decoding, avoiding unnecessary garbage collection pressure on the Android runtime.
 - **On-Device Local Training (`Image_Trainer`)**: Executes gradient descent over assigned binary data segments without exposing user data to the network.
 
 ---
