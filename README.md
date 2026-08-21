@@ -44,7 +44,7 @@ The ecosystem resolves the computational and memory walls of foundation models t
     </td>
     <td align="center" valign="middle">
       <img src="docs/assets/app_screens/WH - Home_active.png" height="410" alt="Android Active Node">
-      <p align="center"><sub><b>Edge Node Application:</b> Hardware-gated on-device training and telemetry monitoring.</sub></p>
+      <p align="center"><sub><b>Edge Node:</b> On-device training & telemetry.</sub></p>
     </td>
   </tr>
 </table>
