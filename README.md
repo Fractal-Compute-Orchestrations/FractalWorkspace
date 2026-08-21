@@ -34,16 +34,16 @@ The ecosystem resolves the computational and memory walls of foundation models t
 
 <table>
   <tr>
-    <th width="65%" align="center">Central Server (FractalCore)</th>
-    <th width="35%" align="center">Edge Compute Node (FractalAndroid)</th>
+    <th width="75%" align="center">Central Server (FractalCore)</th>
+    <th width="25%" align="center">Edge Compute Node (FractalAndroid)</th>
   </tr>
   <tr>
     <td align="center" valign="middle">
-      <img src="docs/assets/server/tenant.png" height="380" alt="Tenant Dashboard">
+      <img src="docs/assets/server/tenant.png" height="410" alt="Tenant Dashboard">
       <p align="center"><sub><b>Multi-Tenant Dashboard:</b> Real-time fleet tracking, segment dispatch, and live aggregation telemetry.</sub></p>
     </td>
     <td align="center" valign="middle">
-      <img src="docs/assets/app_screens/WH - Home_active.png" height="380" alt="Android Active Node">
+      <img src="docs/assets/app_screens/WH - Home_active.png" height="410" alt="Android Active Node">
       <p align="center"><sub><b>Edge Node Application:</b> Hardware-gated on-device training and telemetry monitoring.</sub></p>
     </td>
   </tr>
