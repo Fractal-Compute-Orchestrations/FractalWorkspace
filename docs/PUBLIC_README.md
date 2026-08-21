@@ -87,17 +87,13 @@ graph TD
 
 ## Data Contracts and Network Protocols
 
-```text
-+---------------------+---------------------------------------------------------+
-| Contract Name       | Technical Specification                                 |
-+---------------------+---------------------------------------------------------+
-| Weight Contract     | Binary partition file (.pte / .tflite) <= 150MB         |
-| Activation Contract | 4096-element INT8 array + 1x Float32 scale (4100 bytes) |
-| Task Request        | GET /api/task/current with device_id query parameter    |
-| Checkpoint Upload   | POST /api/model/upload (multipart: task_Id, .ckpt file) |
-| Auth Header         | X-Auth-Token: <64-character hex string>                 |
-+---------------------+---------------------------------------------------------+
-```
+| Contract Name | Technical Specification |
+| :--- | :--- |
+| **Weight Contract** | Binary partition file (`.pte` / `.tflite`) $\le$ 150MB |
+| **Activation Contract** | 4096-element INT8 array + 1x Float32 scale (4,100 bytes) |
+| **Task Request** | `GET /api/task/current` with `device_id` query parameter |
+| **Checkpoint Upload** | `POST /api/model/upload` (multipart: `task_Id`, `.ckpt` file) |
+| **Auth Header** | `X-Auth-Token: <64-character hex string>` |
 
 ---
 
