@@ -69,7 +69,7 @@ graph TD
 
 ### 1. FractalCore: Server & Control Plane
 
-- **Multi-Tenant Sandboxing**: Enforces physical filesystem isolation per tenant (`data/tenants/{username}/`). Datasets, binary segments, and checkpoint uploads remain cryptographically and structurally segregated.
+- **Multi-Tenant Sandboxing**: Enforces physical filesystem isolation per tenant (`data/tenants/{username}/`). Datasets, binary segments, and checkpoint uploads remain physically and structurally segregated in independent directory trees.
 - **Federated Averaging Engine**: Implements synchronous and asynchronous model parameter aggregation. Once threshold uploads are collected for an active round, parameter tensors are averaged and serialized into the new global model checkpoint.
 - **Model Slicer & Graph Lowering**: Transforms large foundation models (such as Llama 3 8B) into 32 atomic INT4 layer partitions (`layer_[N].pte` <= 150MB) targeted for ARM NEON acceleration via XNNPACK.
 - **TFLOPs Budgeting & Liquid Rewards**: Tracks client contributions against session compute budgets, crediting rewards to device hardware profiles in Firestore.
