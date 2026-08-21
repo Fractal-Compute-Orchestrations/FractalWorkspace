@@ -1,6 +1,6 @@
 <div align="center">
 
-![Fractal Hero](docs/assets/hero_logo.png)
+![Fractal Banner](docs/assets/Fractal_Banner.png)
 
 # Fractal
 ### Distributed Compute Orchestration and Edge Intelligence Framework
@@ -27,6 +27,31 @@ The ecosystem resolves the computational and memory walls of foundation models t
 
 1. **FractalCore (Central Server & Orchestrator)**: The Python-based control plane responsible for multi-tenant isolation, dataset segment allocation, model graph compilation/slicing, deterministic federated weight aggregation (FedAvg), compute budgeting, and tokenized reward distribution.
 2. **FractalAndroid (Edge Compute Node & Application)**: The native Kotlin/Android execution engine running on mobile hardware. It performs hardware-gated on-device training and memory-mapped inference, dynamically pausing workloads if thermals or battery thresholds are exceeded.
+
+<div align="center">
+
+![Fractal Ecosystem Architecture](docs/assets/design_guide/22.png)
+
+</div>
+
+### Ecosystem Subsystems
+
+<table>
+  <tr>
+    <th width="50%" align="center">Central Server (FractalCore)</th>
+    <th width="50%" align="center">Edge Compute Application (FractalAndroid)</th>
+  </tr>
+  <tr>
+    <td valign="top">
+      <img src="docs/assets/server/tenant.png" width="100%" alt="Tenant Dashboard">
+      <p align="center"><sub><b>Multi-Tenant Dashboard:</b> Real-time fleet tracking, segment dispatch, and live aggregation telemetry.</sub></p>
+    </td>
+    <td valign="top">
+      <img src="docs/assets/app_screens/WH - Home_active.png" width="100%" alt="Android Active Node">
+      <p align="center"><sub><b>Edge Node Application:</b> Hardware-gated on-device training, live telemetry monitoring, and reward accumulation.</sub></p>
+    </td>
+  </tr>
+</table>
 
 ---
 
