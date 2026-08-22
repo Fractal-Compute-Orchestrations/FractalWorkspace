@@ -1,0 +1,115 @@
+FRACTAL PROPRIETARY SOURCE-AVAILABLE & NON-COMMERCIAL RESTRICTIVE LICENSE
+Version 3.0 (Strict Intellectual Property & Commercial Exclusion Agreement)
+
+Copyright (c) 2024–2026 Ahmad Hassan (B-Ted) / Fractal Compute Orchestrations.
+All Rights Reserved Worldwide under International Copyright Treaties & the Berne Convention.
+
+================================================================================
+CRITICAL LEGAL NOTICE — BINDING CONTRACT:
+This document is a legally binding contract between you (whether an individual,
+enterprise, corporation, or other legal entity, hereinafter "Licensee" or "You")
+and the sole author, architect, and copyright holder, Ahmad Hassan (operating as
+"Fractal Compute Orchestrations", hereinafter "Licensor").
+
+Accessing, cloning, viewing, downloading, installing, compiling, executing, or
+otherwise utilizing any part of this repository, its source code, architecture
+blueprints, mathematical algorithms, neural graph partitions (.pte / .tflite / .ckpt),
+UI assets, documentation, or technical specifications (collectively, the "Work")
+constitutes your unconditional acceptance of this Agreement. If You do not agree,
+You must immediately cease all access, delete all copies, and discontinue use.
+================================================================================
+
+1. EXCLUSIVE INTELLECTUAL PROPERTY OWNERSHIP
+-------------------------------------------
+1.1. Absolute Retention of Rights:
+The Work is licensed solely for restricted evaluation, NEVER sold. The Licensor retains
+exclusive, complete, and unencumbered ownership of all right, title, and interest in
+and to the Work, including but not limited to all patents, patent applications,
+copyrights, trade secrets, moral rights, trademarks, and all proprietary mathematical
+architectures, pipeline parallel slicing workflows, and telemetry gating controllers.
+
+1.2. No Implied Rights:
+Nothing in this Agreement grants, by implication, estoppel, or otherwise, any ownership,
+license, patent grant, or commercial right not expressly stipulated herein.
+
+2. LIMITED NON-COMMERCIAL EVALUATION GRANT
+-----------------------------------------
+Subject to strict compliance with all provisions of this Agreement, the Licensor grants
+You a revocable, non-exclusive, non-transferable, non-sublicensable, limited personal license
+exclusively for:
+  (a) Non-monetized personal study, educational review, and inspection;
+  (b) Non-commercial academic research conducted at accredited institutions, provided
+      mandatory academic citation and attribution are maintained pursuant to Section 4; and
+  (c) Non-commercial architectural security auditing without compensation or public hosting.
+
+3. STRICT PROHIBITION OF COMMERCIAL EXPLOITATION
+------------------------------------------------
+3.1. Absolute Commercial Exclusion:
+ANY COMMERCIAL USE, DIRECT OR INDIRECT REVENUE GENERATION, OR DEPLOYMENT IN SUPPORT OF
+FOR-PROFIT BUSINESS OPERATIONS WITHOUT A SEPARATELY EXECUTED COMMERCIAL ENTERPRISE LICENSE
+IS STRICTLY PROHIBITED AND CONSTITUTES WILLFUL INFRINGEMENT.
+
+3.2. Prohibited Activities (Including but not limited to):
+  (a) Incorporating, embedding, sublicensing, packaging, or linking the Work (or any derivative
+      work thereof) into any commercial software, product, SDK, or closed-source application;
+  (b) Operating the Work as a hosted service, Software-as-a-Service (SaaS), Platform-as-a-Service
+      (PaaS), API endpoint, or commercial decentralized compute provider;
+  (c) Utilizing the Work to perform paid consulting, computational harvesting services, model
+      slicing services, or federated training for any client or commercial third party;
+  (d) Using the Work in connection with fundraising, commercial ventures, token sales, initial
+      coin offerings, or venture capital pitching without express written consent;
+  (e) Internal operational use within any commercial enterprise, business, firm, or company.
+
+4. MANDATORY ATTRIBUTION & INTEGRITY
+------------------------------------
+You may not remove, alter, or obscure any copyright, author attribution, patent notice,
+trademark, or disclaimer contained within the Work. Any academic publication, technical
+whitepaper, presentation, or public derivative must conspicuously carry the following notice:
+  "Fractal: Distributed Computation Harvesting & Model Orchestration.
+   Original Architect & Sole Copyright Owner: Ahmad Hassan (B-Ted),
+   Fractal Compute Orchestrations (https://github.com/Fractal-Compute-Orchestrations)."
+
+5. BREACH, INJUNCTIVE RELIEF, AND LEGAL REMEDIES
+------------------------------------------------
+5.1. Immediate Injunctive Relief:
+You acknowledge that unauthorized use, commercial deployment, or copying of the Work causes
+irreparable and continuing damage to the Licensor for which monetary remedies alone are inadequate.
+Therefore, in the event of any breach, the Licensor shall be entitled to obtain immediate ex parte
+injunctive relief, asset freezing orders, and preliminary injunctions from any court of competent
+jurisdiction without the requirement of posting a bond.
+
+5.2. Monetary Damages and Disgorgement:
+In the event of willful infringement or commercial violation, the Licensor shall be entitled to
+recover all actual damages suffered, all gross revenues and profits earned by You or your affiliates
+arising directly or indirectly from the unauthorized use of the Work, statutory damages to the
+fullest extent permitted by applicable law, and punitive damages.
+
+5.3. Legal Fees and Costs:
+If the Licensor initiates legal proceedings, DMCA enforcement, arbitration, or collection actions
+to enforce this Agreement, the prevailing party shall be entitled to recover from the infringing
+party all reasonable attorneys' fees, expert witness fees, court filing costs, and litigation expenses.
+
+6. AUTOMATIC TERMINATION
+------------------------
+Any breach of any term of this Agreement automatically terminates your license with immediate effect
+without notice. Upon termination, You must immediately and permanently delete, destroy, and erase all
+copies of the Work, its derivatives, and all related documentation from all storage devices and networks.
+
+7. DISCLAIMER OF WARRANTIES & LIMITATION OF LIABILITY
+-----------------------------------------------------
+THE WORK IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+IN NO EVENT SHALL THE LICENSOR BE LIABLE FOR ANY CLAIM, DAMAGES, LOSS OF DATA, DEVICE DAMAGE, OR
+INCIDENTAL/CONSEQUENTIAL LIABILITIES ARISING OUT OF OR IN CONNECTION WITH THE USE OF THE WORK.
+
+8. JURISDICTION & COMMERCIAL LICENSING INQUIRIES
+------------------------------------------------
+This Agreement is governed by international intellectual property treaties (including the Berne
+Convention, WIPO Copyright Treaty, and TRIPS Agreement).
+
+To acquire commercial enterprise licensing, dual-licensing rights, white-label deployment
+permissions, or to discuss strategic IP partnerships, contact:
+  Ahmad Hassan (B-Ted)
+  Lead Architect, Fractal Compute Orchestrations
+  Email: ahmadhassan.bted@gmail.com
+  GitHub: https://github.com/Fractal-Compute-Orchestrations

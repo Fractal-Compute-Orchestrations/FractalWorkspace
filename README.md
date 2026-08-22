@@ -5,7 +5,7 @@
 # Fractal
 ### Distributed Compute Orchestration and Edge Intelligence Framework
 
-[![License](https://img.shields.io/badge/License-Apache_2.0-black?style=for-the-badge)](LICENSE)
+[![License](https://img.shields.io/badge/License-Proprietary_Non--Commercial-black?style=for-the-badge)](LICENSE)
 [![Platform](https://img.shields.io/badge/Platform-Android_%7C_Python-black?style=for-the-badge)](#)
 [![Design](https://img.shields.io/badge/Design_Case_Study-Behance-black?style=for-the-badge&logo=behance)](https://www.behance.net/gallery/221459335/Fractal)
 [![Status](https://img.shields.io/badge/Status-Active_Development-black?style=for-the-badge)](#)
