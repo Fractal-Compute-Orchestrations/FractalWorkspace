@@ -1,4 +1,5 @@
 import json
+import os
 import re
 import urllib.request
 
@@ -69,27 +70,26 @@ try:
                         })
                         image_idx += 1
                 
-                # Now generate the Markdown content
+                # Generate the Markdown content
                 md_lines = []
-                md_lines.append("# Behance Fractal Project Carousel Preview\n")
-                md_lines.append("This document provides a live preview of the design images from the Behance project: [Fractal](https://www.behance.net/gallery/221459335/Fractal).\n")
-                md_lines.append("## Interactive Carousel\n")
-                md_lines.append("Use the arrows below to flip through the design slides:\n")
-                md_lines.append("````carousel")
+                md_lines.append("# Behance Fractal Project Showcase Preview\n")
+                md_lines.append("This document provides a full visual display of the design showcase slides from the Behance project: **[Fractal](https://www.behance.net/gallery/221459335/Fractal)**.\n")
                 
+                md_lines.append("## Interactive Carousel\n")
+                md_lines.append("````carousel")
                 slides = []
                 for img in image_records:
                     slide_md = f"![{img['caption']}]({img['url']})\n\n**Slide {img['index']}**: {img['caption']} ({img['width']}px, {img['type']})"
                     slides.append(slide_md)
-                
                 md_lines.append(("\n<!-- slide -->\n").join(slides))
                 md_lines.append("````\n")
                 
-                md_lines.append("## All Image Links\n")
-                md_lines.append("| Slide | Description / Caption | Width | Format | Image Link |")
-                md_lines.append("| :---: | :--- | :---: | :---: | :--- |")
+                md_lines.append("## Full Visual Gallery\n")
                 for img in image_records:
-                    md_lines.append(f"| {img['index']} | {img['caption']} | {img['width']}px | {img['type']} | [Open Image]({img['url']}) |")
+                    md_lines.append(f"### Slide {img['index']}: {img['caption']}")
+                    md_lines.append(f"<p align=\"center\">\n  <img src=\"{img['url']}\" width=\"100%\" alt=\"Slide {img['index']} - {img['caption']}\">\n</p>")
+                    md_lines.append(f"*Resolution: {img['width']}px | Format: {img['type']}*\n")
+                    md_lines.append("---\n")
                 
                 md_content = "\n".join(md_lines)
                 
