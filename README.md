@@ -257,11 +257,11 @@ cd FractalApp/FractalAndroid
 
 ---
 
-## Governance & Maintenance
+## Governance & Licensing
 
-Fractal is an open engineering initiative architected by **[Ahmad Hassan (B-Ted)](https://github.com/Fractal-Compute-Orchestrations)**.
+Fractal is architected and owned by **[Ahmad Hassan (B-Ted)](https://github.com/Fractal-Compute-Orchestrations)**.
 
 - Code of Conduct: See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
 - Contribution Guidelines: See [CONTRIBUTING.md](CONTRIBUTING.md)
 - Security Disclosure: See [SECURITY.md](SECURITY.md)
-- License: Open-source under the [Apache License 2.0](LICENSE)
+- License: Proprietary & Source-Available under the [Fractal Proprietary Non-Commercial License](LICENSE). All Rights Reserved. Commercial use strictly prohibited without written authorization.
