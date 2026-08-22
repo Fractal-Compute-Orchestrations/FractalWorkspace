@@ -5,7 +5,7 @@
 # Fractal
 ### Distributed Compute Orchestration and Edge Intelligence Framework
 
-[![License](https://img.shields.io/badge/License-Proprietary_Non--Commercial-black?style=for-the-badge)](LICENSE)
+[![License](https://img.shields.io/badge/License-Proprietary_Non--Commercial_v3.0-black?style=for-the-badge)](LICENSE)
 [![Platform](https://img.shields.io/badge/Platform-Android_%7C_Python-black?style=for-the-badge)](#)
 [![Design](https://img.shields.io/badge/Design_Case_Study-Behance-black?style=for-the-badge&logo=behance)](https://www.behance.net/gallery/221459335/Fractal)
 [![Status](https://img.shields.io/badge/Status-Active_Development-black?style=for-the-badge)](#)
@@ -264,4 +264,4 @@ Fractal is architected and owned by **[Ahmad Hassan (B-Ted)](https://github.com/
 - Code of Conduct: See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
 - Contribution Guidelines: See [CONTRIBUTING.md](CONTRIBUTING.md)
 - Security Disclosure: See [SECURITY.md](SECURITY.md)
-- License: Proprietary & Source-Available under the [Fractal Proprietary Non-Commercial License](LICENSE). All Rights Reserved. Commercial use strictly prohibited without written authorization.
+- License: Proprietary & Source-Available under the [Fractal Proprietary Source-Available & Non-Commercial Restrictive License v3.0](LICENSE). All Rights Reserved. Commercial use strictly prohibited without written authorization.
