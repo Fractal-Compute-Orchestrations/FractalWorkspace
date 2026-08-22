@@ -93,8 +93,10 @@ try:
                 
                 md_content = "\n".join(md_lines)
                 
-                # Write to the workspace parent root
-                workspace_path = r"p:\FractalWorkspace\behance_carousel_preview.md"
+                # Write to docs/behance_carousel_preview.md
+                script_dir = os.path.dirname(os.path.abspath(__file__))
+                workspace_dir = os.path.dirname(script_dir)
+                workspace_path = os.path.join(workspace_dir, "docs", "behance_carousel_preview.md")
                 with open(workspace_path, "w", encoding="utf-8") as f:
                     f.write(md_content)
                 print(f"Saved carousel markdown to {workspace_path}")
