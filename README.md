@@ -17,9 +17,16 @@
 [Overview](#overview) | [Design Case Study](https://www.behance.net/gallery/221459335/Fractal) | [Architecture](#system-architecture) | [Core Paradigms](#operational-paradigms) | [Repository Topology](#repository-topology) | [Getting Started](#getting-started) | [Security](#security-and-privacy)
 
 ---
+
 <p align="center">
-  <a href="https://trendshift.io/repositories/127371?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-127371" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/127371/daily?language=Python" alt="Fractal-Compute-Orchestrations%2FFractalWorkspace | Trendshift" width="250" height="55"/></a>
+ <a href="https://trendshift.io/repositories/127371?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-127371" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/127371/daily?language=Python" alt="Fractal-Compute-Orchestrations%2FFractalWorkspace | Trendshift" width="250" height="55"/></a>
+ </p>
+
+ 
+<p align="center">
+    <a href="https://trendshift.io/repositories/127371?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-127371" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/127371/weekly?language=Python" alt="Fractal-Compute-Orchestrations%2FFractalWorkspace | Trendshift" width="250" height="55"/></a>
   <a href="https://trendshift.io/repositories/127371?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-127371" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/127371/daily" alt="Fractal-Compute-Orchestrations%2FFractalWorkspace | Trendshift" width="250" height="55"/></a>
+    <a href="https://trendshift.io/repositories/127371?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-127371" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/127371/weekly" alt="Fractal-Compute-Orchestrations%2FFractalWorkspace | Trendshift" width="250" height="55"/></a>
 </p>
 
 
