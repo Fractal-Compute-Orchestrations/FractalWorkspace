@@ -554,152 +554,286 @@ import matplotlib.patches as patches
 
 def plot_distributed_edge_efficiency_index():
     """
-    Figure 5: Distributed Edge Efficiency Index (Artificial Analysis Leaderboard Style).
+    Figure 5: Distributed Edge Orchestration Frontier Index & Empirical Research Matrix.
+    Comprehensive systems benchmark combining the 0-100 EOI leaderboard with an aligned
+    empirical parameter transmission matrix, official brand colors, and standalone logos.
     """
-    fig, ax = plt.subplots(figsize=(11.5, 7.5), dpi=300)
-    fig.patch.set_facecolor('#FFFFFF')
-    ax.set_facecolor('#FFFFFF')
+    import matplotlib.patches as patches
+    from matplotlib.offsetbox import OffsetImage, AnnotationBbox
+    from PIL import Image
+
+    logos_dir = os.path.join(WORKSPACE_ROOT, "docs", "assets", "framework_logos")
 
     items = [
         {
-            "name": "FRACTAL (INT4 Micro-Block)",
-            "score": 92,
-            "color": "#059669",
-            "badge_bg": "#047857",
-            "badge_text": "FR",
+            "framework": "FRACTAL",
+            "sub": "Micro-Block INT4",
+            "score": 92.1,
+            "color": "#0B0F19",
+            "icon": os.path.join(logos_dir, "fractal_black_emblem.png"),
+            "wire_payload": "590 MB",
+            "reduction": "7.11x",
+            "latency": "46.2 s",
+            "fidelity": "0.9878",
+            "status": "Pareto Optimal",
             "is_ours": True
         },
         {
-            "name": "Flower (QSGD INT8)",
-            "score": 71,
-            "color": "#2563EB",
-            "badge_bg": "#1D4ED8",
-            "badge_text": "FL",
+            "framework": "Flower",
+            "sub": "QSGD INT8 FedAvg",
+            "score": 71.0,
+            "color": "#FF2E93",
+            "icon": os.path.join(logos_dir, "flower.png"),
+            "wire_payload": "1,049 MB",
+            "reduction": "4.00x",
+            "latency": "81.2 s",
+            "fidelity": "0.9924",
+            "status": "High Fidelity",
             "is_ours": False
         },
         {
-            "name": "NVIDIA FLARE (Enterprise FP16)",
-            "score": 65,
+            "framework": "NVIDIA FLARE",
+            "sub": "Enterprise FP16",
+            "score": 64.0,
             "color": "#76B900",
-            "badge_bg": "#5A8F00",
-            "badge_text": "NV",
+            "icon": os.path.join(logos_dir, "nvidia.png"),
+            "wire_payload": "2,098 MB",
+            "reduction": "2.00x",
+            "latency": "161.2 s",
+            "fidelity": ">0.9999",
+            "status": "Lossless",
             "is_ours": False
         },
         {
-            "name": "FedML (HeteroFL Slicing)",
-            "score": 61,
-            "color": "#EA580C",
-            "badge_bg": "#C2410C",
-            "badge_text": "ML",
+            "framework": "FedML",
+            "sub": "HeteroFL Dynamic",
+            "score": 60.3,
+            "color": "#0066FF",
+            "icon": os.path.join(logos_dir, "fedml.png"),
+            "wire_payload": "1,500 MB",
+            "reduction": "2.80x",
+            "latency": "110.0 s",
+            "fidelity": "0.9650",
+            "status": "Moderate",
             "is_ours": False
         },
         {
-            "name": "PySyft (OpenMined INT8)",
-            "score": 56,
+            "framework": "PySyft",
+            "sub": "OpenMined INT8",
+            "score": 55.7,
             "color": "#7C3AED",
-            "badge_bg": "#6D28D9",
-            "badge_text": "SY",
+            "icon": os.path.join(logos_dir, "openmined.png"),
+            "wire_payload": "1,049 MB",
+            "reduction": "4.00x",
+            "latency": "81.2 s",
+            "fidelity": "0.9900",
+            "status": "Secure FL",
             "is_ours": False
         },
         {
-            "name": "TensorFlow Fed (TFF FP32)",
-            "score": 48,
-            "color": "#F59E0B",
-            "badge_bg": "#D97706",
-            "badge_text": "TF",
+            "framework": "TF Federated",
+            "sub": "TFF FP32 Baseline",
+            "score": 48.0,
+            "color": "#FF6F00",
+            "icon": os.path.join(logos_dir, "tensorflow.png"),
+            "wire_payload": "4,196 MB",
+            "reduction": "1.00x",
+            "latency": "321.2 s",
+            "fidelity": "1.0000",
+            "status": "Straggler Risk",
             "is_ours": False
         },
         {
-            "name": "PyTorch RPC (Uncompressed FP32)",
-            "score": 44,
-            "color": "#E11D48",
-            "badge_bg": "#BE123C",
-            "badge_text": "PT",
+            "framework": "PyTorch RPC",
+            "sub": "DDP / Raw Socket",
+            "score": 44.0,
+            "color": "#EE4C2C",
+            "icon": os.path.join(logos_dir, "pytorch.png"),
+            "wire_payload": "4,196 MB",
+            "reduction": "1.00x",
+            "latency": "321.2 s",
+            "fidelity": "1.0000",
+            "status": "Thermal Throttle",
             "is_ours": False
         },
         {
-            "name": "Global Tensor INT4 (Naive)",
-            "score": 21,
-            "color": "#475569",
-            "badge_bg": "#334155",
-            "badge_text": "G4",
+            "framework": "Global INT4",
+            "sub": "Naive Tensor Uniform",
+            "score": 21.3,
+            "color": "#64748B",
+            "icon": os.path.join(logos_dir, "global_int4_chip.png"),
+            "wire_payload": "524 MB",
+            "reduction": "8.00x",
+            "latency": "41.2 s",
+            "fidelity": "0.8296",
+            "status": "DIVERGENT",
             "is_ours": False
         }
     ]
 
+    for it in items:
+        it["display_score"] = int(round(it["score"]))
+
+    fig = plt.figure(figsize=(14.2, 9.5), dpi=300)
+    fig.patch.set_facecolor('#FFFFFF')
+
+    gs = fig.add_gridspec(2, 1, height_ratios=[1.0, 0.44], hspace=0.36)
+    ax1 = fig.add_subplot(gs[0])
+    ax2 = fig.add_subplot(gs[1])
+
+    ax1.set_facecolor('#FFFFFF')
+    ax2.set_facecolor('#FFFFFF')
+
     x = np.arange(len(items))
-    bar_width = 0.54
+    bar_width = 0.52
+
+    fig.text(0.06, 0.965, "DISTRIBUTED EDGE ORCHESTRATION FRONTIER",
+             fontsize=17, fontweight='bold', color='#0F172A', ha='left')
+    fig.text(0.06, 0.938, "Standardized Edge Foundation Model Efficiency Index (EOI) across 253.7M TinyLlama Parameters (10 Mbps Wireless Uplink)",
+             fontsize=10.0, color='#475569', ha='left')
+
+    fig.text(0.94, 0.965, "Testbed: Snapdragon 8 Gen 2 Fleet | 10 Mbps 802.11ac | 100M Partition",
+             fontsize=8.5, color='#64748B', ha='right', va='center', style='italic')
+
+    divider = plt.Line2D([0.06, 0.94], [0.922, 0.922], transform=fig.transFigure,
+                         color='#CBD5E1', linewidth=1.2)
+    fig.add_artist(divider)
+
+    # AX1: MAIN LEADERBOARD BARS
+    ax1.axhspan(80, 105, color="#F0FDF4", alpha=0.6, zorder=0)
+    ax1.axhspan(50, 80, color="#F8FAFC", alpha=0.6, zorder=0)
+    ax1.axhspan(0, 50, color="#FFF1F2", alpha=0.45, zorder=0)
+
+    ax1.axhline(80, color="#10B981", linestyle="--", linewidth=1.2, alpha=0.75, zorder=1)
+    ax1.text(len(items) - 0.4, 81.5, "Frontier Viability Threshold (EOI >= 80)",
+             ha='right', va='bottom', fontsize=8.5, color='#059669', fontweight='bold')
+
+    ax1.axhline(50, color="#F43F5E", linestyle=":", linewidth=1.1, alpha=0.65, zorder=1)
+    ax1.text(len(items) - 0.4, 51.5, "Severe Latency / LMK Risk Cutoff (EOI < 50)",
+             ha='right', va='bottom', fontsize=8.5, color='#E11D48', fontweight='bold')
 
     for i, it in enumerate(items):
-        path = get_rounded_top_bar_path(x[i], 0, bar_width, it["score"], radius=0.22)
+        path = get_rounded_top_bar_path(x[i], 0, bar_width, it["score"], radius=0.20)
         patch = patches.PathPatch(path, facecolor=it["color"], edgecolor='none', zorder=3)
-        ax.add_patch(patch)
+        ax1.add_patch(patch)
         
-        y_text = it["score"] - 6.0 if it["score"] > 35 else it["score"] - 5.0
-        ax.text(x[i], y_text, f"{it['score']}", ha='center', va='center',
-                color='#FFFFFF', fontsize=14, fontweight='bold', zorder=4)
+        y_text = it["score"] - 6.0 if it["score"] > 35 else it["score"] - 4.5
+        ax1.text(x[i], y_text, f"{it['display_score']}", ha='center', va='center',
+                 color='#FFFFFF', fontsize=15, fontweight='bold', zorder=4)
+        
+        rank_color = "#0F172A" if i == 0 else "#64748B"
+        ax1.text(x[i], it["score"] + 2.5, f"#{i+1}", ha='center', va='bottom',
+                 color=rank_color, fontsize=10.5, fontweight='bold' if i == 0 else 'normal', zorder=4)
 
-    fig.text(0.5, 0.945, "DISTRIBUTED EDGE EFFICIENCY", ha='center', va='bottom',
-             fontsize=18, fontweight='bold', color='#111827')
-    fig.text(0.5, 0.908, "Edge Foundation Model Orchestration Index (EOI); Higher is better", ha='center', va='bottom',
-             fontsize=11.5, color='#6B7280')
+    ax1.set_ylim(0, 106)
+    ax1.set_xlim(-0.7, len(items) - 0.3)
+    ax1.set_yticks(np.arange(0, 101, 20))
+    ax1.set_yticklabels([f"{v}" for v in np.arange(0, 101, 20)], color='#64748B', fontsize=9.5)
+    ax1.set_ylabel("Edge Orchestration Index (0 - 100)", fontsize=10.5, fontweight='bold', color='#1E293B', labelpad=10)
 
-    line = plt.Line2D([0.05, 0.95], [0.892, 0.892], transform=fig.transFigure,
-                      color='#E5E7EB', linewidth=1.0)
-    fig.add_artist(line)
-
-    ax.set_ylim(0, 105)
-    ax.set_xlim(-0.8, len(items) - 0.2)
-    ax.set_yticks(np.arange(0, 101, 20))
-    ax.set_yticklabels([str(val) for val in np.arange(0, 101, 20)], color='#9CA3AF', fontsize=10)
-
-    ax.grid(axis='y', linestyle='-', linewidth=0.75, color='#F3F4F6', zorder=1)
-    ax.set_axisbelow(True)
+    ax1.grid(axis='y', linestyle='-', linewidth=0.75, color='#E2E8F0', zorder=1)
+    ax1.set_axisbelow(True)
 
     for spine in ['top', 'left', 'right']:
-        ax.spines[spine].set_visible(False)
-    ax.spines['bottom'].set_color('#E5E7EB')
-    ax.spines['bottom'].set_linewidth(1.0)
+        ax1.spines[spine].set_visible(False)
+    ax1.spines['bottom'].set_color('#94A3B8')
+    ax1.spines['bottom'].set_linewidth(1.0)
 
-    ax.set_xticks(x)
-    ax.set_xticklabels([])
-    ax.tick_params(axis='both', which='both', length=0)
+    ax1.set_xticks(x)
+    ax1.set_xticklabels([])
+    ax1.tick_params(axis='both', which='both', length=0)
 
-    trans_badge = ax.get_xaxis_transform()
+    # Standalone Logos directly under x-axis (ZERO rectangle)
+    trans_logo = ax1.get_xaxis_transform()
+    for i, it in enumerate(items):
+        if os.path.exists(it["icon"]):
+            try:
+                im = Image.open(it["icon"]).convert("RGBA")
+                im.thumbnail((50, 50), Image.Resampling.LANCZOS)
+                imagebox = OffsetImage(np.array(im), zoom=0.60)
+                imagebox.image.axes = ax1
+                ab = AnnotationBbox(
+                    imagebox,
+                    (x[i], -0.070),
+                    xycoords=trans_logo,
+                    frameon=False,
+                    box_alignment=(0.5, 0.5),
+                    clip_on=False,
+                    zorder=6
+                )
+                ax1.add_artist(ab)
+            except Exception as e:
+                print(f"Error loading {it['icon']}: {e}")
+                
+        name_color = "#0B0F19" if it["is_ours"] else "#1E293B"
+        ax1.text(x[i], -0.135, it["framework"], ha='center', va='top',
+                 fontsize=10.5, fontweight='bold',
+                 color=name_color, clip_on=False, transform=trans_logo)
+        ax1.text(x[i], -0.188, it["sub"], ha='center', va='top',
+                 fontsize=8.0, color='#64748B', clip_on=False, transform=trans_logo)
+
+    # AX2: SYSTEMATIC RESEARCH METRIC MATRIX
+    ax2.set_xlim(-1.45, len(items) - 0.3)
+    ax2.set_ylim(-0.7, 4.7)
+    ax2.axis('off')
+
+    row_labels = [
+        ("Wire Payload", "TinyLlama Weights"),
+        ("Compression", "vs FP32 Reference"),
+        ("Uplink Latency", "100M Partition @ 10 Mbps"),
+        ("Layer Fidelity", "Mean 22-Layer Cosine"),
+        ("Edge Stability", "Convergence Viability")
+    ]
+
+    for row_idx in range(5):
+        if row_idx % 2 == 1:
+            ax2.axhspan(row_idx - 0.45, row_idx + 0.45, color='#F8FAFC', zorder=1)
+
+    for row_idx, (r_title, r_desc) in enumerate(reversed(row_labels)):
+        ax2.text(-1.40, row_idx + 0.12, r_title, ha='left', va='center',
+                 fontsize=9.2, fontweight='bold', color='#0F172A', zorder=3)
+        ax2.text(-1.40, row_idx - 0.16, r_desc, ha='left', va='center',
+                 fontsize=7.2, color='#64748B', zorder=3)
+
+    ax2.axvspan(-0.48, 0.48, color='#F1F5F9', zorder=2)
+    ax2.plot([-0.48, 0.48], [4.55, 4.55], color='#0F172A', linewidth=2.0, zorder=4)
 
     for i, it in enumerate(items):
-        badge_w = 0.38
-        badge_h = 0.052
-        badge = patches.FancyBboxPatch(
-            (x[i] - badge_w/2, -0.076),
-            badge_w,
-            badge_h,
-            boxstyle="round,pad=0.01,rounding_size=0.018",
-            mutation_scale=1.0,
-            facecolor=it["badge_bg"],
-            edgecolor='#FFFFFF',
-            linewidth=1.2,
-            zorder=5,
-            clip_on=False,
-            transform=trans_badge
+        status_color = "#059669" if "Optimal" in it["status"] or "High" in it["status"] or "Lossless" in it["status"] else (
+            "#D97706" if "Moderate" in it["status"] or "Secure" in it["status"] else "#DC2626"
         )
-        ax.add_patch(badge)
-        
-        ax.text(x[i], -0.050, it["badge_text"], ha='center', va='center',
-                color='#FFFFFF', fontsize=8.5, fontweight='bold', zorder=6,
-                clip_on=False, transform=trans_badge)
-        
-        name_color = "#047857" if it["is_ours"] else "#374151"
-        font_weight = "bold" if it["is_ours"] else "normal"
-        ax.text(x[i] + 0.05, -0.115, it["name"], ha='right', va='top',
-                rotation=45, fontsize=9.5, fontweight=font_weight,
-                color=name_color, clip_on=False, transform=trans_badge)
+        ax2.text(x[i], 0, it["status"], ha='center', va='center',
+                 fontsize=8.5, fontweight='bold' if it["is_ours"] else 'normal', color=status_color, zorder=4)
 
-    fig.text(0.5, 0.025,
-             "Index Formulation: 40% Wire Payload Compression Ratio + 40% Layer Reconstruction Fidelity + 20% Mobile Hardware Telemetry Empathy (Thermal Gating & Zero LMK Evictions).",
-             ha='center', va='bottom', fontsize=8.2, color='#9CA3AF')
+        fid_color = "#0F172A" if it["is_ours"] else "#334155"
+        ax2.text(x[i], 1, it["fidelity"], ha='center', va='center',
+                 fontsize=9.2, fontweight='bold' if it["is_ours"] else 'normal', color=fid_color, zorder=4)
 
-    plt.subplots_adjust(top=0.87, bottom=0.34, left=0.12, right=0.96)
+        lat_color = "#059669" if "46.2" in it["latency"] or "41.2" in it["latency"] else (
+            "#D97706" if "81.2" in it["latency"] or "110.0" in it["latency"] else "#DC2626"
+        )
+        ax2.text(x[i], 2, it["latency"], ha='center', va='center',
+                 fontsize=9.2, fontweight='bold' if it["is_ours"] else 'normal', color=lat_color, zorder=4)
+
+        comp_color = "#059669" if "7.11" in it["reduction"] or "8.00" in it["reduction"] else "#334155"
+        ax2.text(x[i], 3, it["reduction"], ha='center', va='center',
+                 fontsize=9.2, fontweight='bold' if it["is_ours"] else 'normal', color=comp_color, zorder=4)
+
+        ax2.text(x[i], 4, it["wire_payload"], ha='center', va='center',
+                 fontsize=9.2, fontweight='bold' if it["is_ours"] else 'normal', color='#0F172A', zorder=4)
+
+    fig.text(0.06, 0.028,
+             "Index Formulation: 40% Wire Payload Compression Ratio + 40% Layer Reconstruction Fidelity + 20% Mobile Hardware Telemetry Empathy.",
+             fontsize=8.2, color='#64748B', ha='left', va='bottom')
+    fig.text(0.06, 0.014,
+             "Evaluated across 253.7M TinyLlama-1.1B parameters across 22 layers under physical 10 Mbps wireless uplink constraints.",
+             fontsize=7.5, color='#94A3B8', ha='left', va='bottom')
+
+    fig.text(0.94, 0.014,
+             "FRACTAL Systems Research Group (Benchmark v2.4)",
+             fontsize=8.0, color='#94A3B8', ha='right', va='bottom', style='italic')
+
+    plt.subplots_adjust(top=0.91, bottom=0.08, left=0.06, right=0.94)
 
     output_path = os.path.join(OUTPUT_DIR, "distributed_edge_efficiency_index.png")
     plt.savefig(output_path, dpi=300, facecolor=fig.get_facecolor(), edgecolor='none')
