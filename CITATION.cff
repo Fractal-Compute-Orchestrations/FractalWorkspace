@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use FRACTAL in academic research or technical evaluations, please cite Fractal Compute Orchestrations as below."
+title: "FRACTAL: Distributed Compute Orchestration and Edge Intelligence Framework"
+authors:
+  - name: "Fractal Compute Orchestrations"
+    website: "https://github.com/Fractal-Compute-Orchestrations"
+repository-code: "https://github.com/Fractal-Compute-Orchestrations/FractalWorkspace"
+url: "https://github.com/Fractal-Compute-Orchestrations"
+license-url: "https://github.com/Fractal-Compute-Orchestrations/FractalWorkspace/blob/master/LICENSE"
+keywords:
+  - federated-learning
+  - edge-ai
+  - int4-quantization
+  - pipeline-parallelism
+  - executorch
+  - android
+type: software

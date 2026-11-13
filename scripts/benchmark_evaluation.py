@@ -550,8 +550,6 @@ def get_rounded_top_bar_path(x, y, width, height, radius):
     return Path(verts, codes)
 
 
-import matplotlib.patches as patches
-
 def plot_distributed_edge_efficiency_index():
     """
     Figure 5: Distributed Edge Orchestration Frontier Index & Empirical Research Matrix.
@@ -849,7 +847,7 @@ def main():
     results = benchmark_tinyllama_layers()
     mean_cos_f = float(np.mean(results["fractal_cos"]))
     mean_cos_g = float(np.mean(results["global_cos"]))
-    print(f"\nFinal Measured Results:")
+    print("\nFinal Measured Results:")
     print(f"  FRACTAL Mean Cosine Similarity : {mean_cos_f:.4f}")
     print(f"  Global INT4 Mean Cosine Sim    : {mean_cos_g:.4f}")
     print(f"  FRACTAL Mean Squared Error     : {np.mean(results['fractal_mse']):.6f}")

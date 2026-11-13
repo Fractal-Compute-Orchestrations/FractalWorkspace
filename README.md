@@ -5,12 +5,13 @@
 # Fractal
 ### Distributed Compute Orchestration and Edge Intelligence Framework
 
-[![License](https://img.shields.io/badge/License-Proprietary_Non--Commercial_v3.0-black?style=for-the-badge)](LICENSE)
+[![License](https://img.shields.io/badge/License-Proprietary_Non--Commercial_v3.1-black?style=for-the-badge)](LICENSE)
 [![Platform](https://img.shields.io/badge/Platform-Android_%7C_Python-black?style=for-the-badge)](#)
+[![Open In Colab](https://img.shields.io/badge/Colab-Quickstart_Demo-black?style=for-the-badge&logo=googlecolab)](https://colab.research.google.com/github/Fractal-Compute-Orchestrations/FractalCore/blob/main/examples/colab_quickstart.ipynb)
 [![Design](https://img.shields.io/badge/Design_Case_Study-Behance-black?style=for-the-badge&logo=behance)](https://www.behance.net/gallery/221459335/Fractal)
 [![Status](https://img.shields.io/badge/Status-Active_Development-black?style=for-the-badge)](#)
 [![Architecture](https://img.shields.io/badge/Architecture-Federated_Learning_%26_Pipeline_Parallelism-black?style=for-the-badge)](#)
-[![Maintainer](https://img.shields.io/badge/Maintained_by-Ahmad_Hassan_(B--Ted)-black?style=for-the-badge)](https://github.com/Fractal-Compute-Orchestrations)
+[![Organization](https://img.shields.io/badge/Organization-Fractal_Compute_Orchestrations-black?style=for-the-badge)](https://github.com/Fractal-Compute-Orchestrations)
 
 **A unified distributed systems framework bridging centralized model orchestration with decentralized edge intelligence.**
 
@@ -457,17 +458,19 @@ If the repository was cloned without `--recursive`, initialize submodules manual
 git submodule update --init --recursive
 ```
 
-### Initializing the Orchestrator (FractalCore)
+### Initializing the Orchestrator and Codec SDK (FractalCore)
 
 ```bash
-cd FractalCore
-cp .env.example .env
+# Install the standalone quantization and federated aggregation SDK
+pip install -e ./FractalCore
 
-# Launch production server via Docker Compose
-docker-compose up --build -d
+# Verify codec compression fidelity, CLI telemetry, and FedAvg/Krum round
+fractal doctor
+fractal bench --layers 4 --hidden-size 256
+python FractalCore/scripts/quickstart_demo.py
 
-# Verify server status
-curl http://localhost:5000/api/admin/tenants
+# Run coordinator test suite
+pytest FractalCore/tests -v
 ```
 
 ### Initializing the Edge Client (FractalAndroid)
@@ -475,7 +478,10 @@ curl http://localhost:5000/api/admin/tenants
 ```bash
 cd FractalApp/FractalAndroid
 
-# Build project with Gradle
+# Run JVM unit tests (FRQ4/FRQD cross-language wire check, thermal gating, storage safety)
+./gradlew testDebugUnitTest
+
+# Build Debug APK
 ./gradlew assembleDebug
 
 # Install on connected physical device
@@ -486,18 +492,20 @@ cd FractalApp/FractalAndroid
 
 ## Security and Privacy
 
-- **Zero Data Ingress**: The central server never ingests, stores, or processes raw user datasets. Only compiled mathematical weight checkpoints are transmitted.
-- **Stateless Token Authentication**: Authentication is enforced exclusively through the `X-Auth-Token` request header. Tokens are cryptographically generated (`secrets.token_hex(32)`) and isolated from browser cookies to eliminate cross-tab session leakage.
-- **Physical Tenant Sandboxing**: Multi-tenancy is enforced at the storage engine level. Each tenant's datasets, bins, and intermediate checkpoints are sandboxed in isolated directory trees (`data/tenants/{username}/`).
+- **Zero Data Ingress**: The central server never ingests, stores, or processes raw user datasets. Only compiled mathematical weight checkpoints or compressed `.frqd` wire bundles are transmitted.
+- **Stateless Token Authentication**: Authentication is enforced exclusively through the `X-Auth-Token` or `Authorization: Bearer` request header. Tokens are cryptographically generated (`secrets.token_hex(32)`) and validated consistently via constant-time comparison.
+- **Physical Tenant Sandboxing**: Multi-tenancy is enforced at the storage engine level via canonical path-traversal guards (`_safe_join` on Python and `FractalPaths` on Android). Each tenant's datasets, bins, and intermediate checkpoints are sandboxed in isolated directory trees (`data/tenants/{username}/`).
 - **Replay Protection**: Checkpoint uploads require a valid, non-expired, single-use `task_Id`. Stale or duplicate uploads are rejected at the ingress gate.
 
 ---
 
 ## Governance & Licensing
 
-Fractal is architected and owned by **[Ahmad Hassan (B-Ted)](https://github.com/Fractal-Compute-Orchestrations)**.
+FRACTAL is engineered, maintained, and owned by **[Fractal Compute Orchestrations](https://github.com/Fractal-Compute-Orchestrations)**.
 
 - Code of Conduct: See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
 - Contribution Guidelines: See [CONTRIBUTING.md](CONTRIBUTING.md)
 - Security Disclosure: See [SECURITY.md](SECURITY.md)
-- License: Proprietary & Source-Available under the [Fractal Proprietary Source-Available & Non-Commercial Restrictive License v3.0](LICENSE). All Rights Reserved. Commercial use strictly prohibited without written authorization.
+- Citation: See [CITATION.cff](CITATION.cff)
+- Notice: See [NOTICE](NOTICE)
+- License: Proprietary Source-Available & Non-Commercial under the [FRACTAL Proprietary Source-Available & Non-Commercial Restrictive License v3.1](LICENSE). All Rights Reserved. Commercial use, hosted SaaS/PaaS monetization, and unauthorized startup or corporate derivative exploitation are strictly prohibited without a separately executed commercial license.

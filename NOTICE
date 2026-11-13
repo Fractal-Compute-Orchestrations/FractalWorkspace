@@ -1,0 +1,26 @@
+FRACTAL (Fractal Compute Orchestrations)
+Copyright (c) 2024-2026 Fractal Compute Orchestrations. All Rights Reserved.
+
+This umbrella workspace and its companion repositories (FractalWorkspace,
+FractalCore, FractalAndroid, and github_) are distributed STRICTLY under
+the FRACTAL Proprietary Source-Available & Non-Commercial Restrictive
+License Version 3.1 (see LICENSE).
+
+No commercial use, revenue generation, SaaS/PaaS/API hosting, startup or
+for-profit company deployment, managed service monetization, model-slicing-
+for-hire, or paid third-party compute harvesting is permitted without a
+separate, executed Enterprise Commercial License signed by Fractal Compute
+Orchestrations. Creating derivative products, commercial wrappers, or
+businesses using FRACTAL, its wire formats (FRQ4/FRQD), or its derivatives
+without an executed Commercial License from Fractal Compute Orchestrations
+is strictly prohibited.
+
+"FRACTAL", "FractalCore", "FractalAndroid", "FractalWorkspace", and "WiFi Bank"
+are proprietary trademarks of Fractal Compute Orchestrations
+(https://github.com/Fractal-Compute-Orchestrations). No trademark or endorsement
+rights are granted under this distribution.
+
+For commercial licensing inquiries, contact:
+  Fractal Compute Orchestrations
+  GitHub: https://github.com/Fractal-Compute-Orchestrations
+  Email: ahmadhassan.bted@gmail.com

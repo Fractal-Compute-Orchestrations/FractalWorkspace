@@ -1,0 +1,38 @@
+name: Workspace CI
+
+on:
+  push:
+    branches: [ "master", "main", "develop" ]
+  pull_request:
+    branches: [ "master", "main", "develop" ]
+
+jobs:
+  verify-workspace:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install tools and core SDK
+        run: |
+          python -m pip install -U pip
+          pip install ruff
+          pip install -e "./FractalCore[dev]"
+
+      - name: Check workspace scripts with ruff
+        run: ruff check scripts
+
+      - name: Verify submodule and workspace integrity
+        run: python scripts/verify_environment.py
+
+      - name: Verify FractalCore CLI and quickstart demo
+        run: |
+          fractal doctor
+          fractal bench
+          python FractalCore/scripts/quickstart_demo.py

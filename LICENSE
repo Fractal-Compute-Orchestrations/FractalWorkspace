@@ -1,115 +1,137 @@
 FRACTAL PROPRIETARY SOURCE-AVAILABLE & NON-COMMERCIAL RESTRICTIVE LICENSE
-Version 3.0 (Strict Intellectual Property & Commercial Exclusion Agreement)
+Version 3.1 (Strict Intellectual Property, Anti-Hosted-Service & Commercial Exclusion Agreement)
 
-Copyright (c) 2024–2026 Ahmad Hassan (B-Ted) / Fractal Compute Orchestrations.
+Copyright (c) 2024-2026 Fractal Compute Orchestrations.
 All Rights Reserved Worldwide under International Copyright Treaties & the Berne Convention.
 
 ================================================================================
-CRITICAL LEGAL NOTICE — BINDING CONTRACT:
+CRITICAL LEGAL NOTICE (BINDING CONTRACT):
 This document is a legally binding contract between you (whether an individual,
-enterprise, corporation, or other legal entity, hereinafter "Licensee" or "You")
-and the sole author, architect, and copyright holder, Ahmad Hassan (operating as
-"Fractal Compute Orchestrations", hereinafter "Licensor").
+enterprise, corporation, startup, institution, cloud vendor, or other legal entity,
+hereinafter "Licensee" or "You") and Fractal Compute Orchestrations (the intellectual
+property owner and sole rights holder, hereinafter "Licensor").
 
-Accessing, cloning, viewing, downloading, installing, compiling, executing, or
-otherwise utilizing any part of this repository, its source code, architecture
-blueprints, mathematical algorithms, neural graph partitions (.pte / .tflite / .ckpt),
-UI assets, documentation, or technical specifications (collectively, the "Work")
-constitutes your unconditional acceptance of this Agreement. If You do not agree,
-You must immediately cease all access, delete all copies, and discontinue use.
+Accessing, cloning, viewing, downloading, installing, compiling, executing, importing,
+or otherwise utilizing any part of this repository, its source code, architecture
+blueprints, mathematical algorithms, wire codecs (FRQ4 / FRQD), neural graph partitions
+(.pte / .tflite / .ckpt / .frqd), UI assets, documentation, or technical specifications
+(collectively, the "Work") constitutes your unconditional acceptance of this Agreement.
+If You do not agree, You must immediately cease all access, delete all copies, and
+discontinue use.
 ================================================================================
 
 1. EXCLUSIVE INTELLECTUAL PROPERTY OWNERSHIP
--------------------------------------------
+============================================
 1.1. Absolute Retention of Rights:
-The Work is licensed solely for restricted evaluation, NEVER sold. The Licensor retains
-exclusive, complete, and unencumbered ownership of all right, title, and interest in
-and to the Work, including but not limited to all patents, patent applications,
-copyrights, trade secrets, moral rights, trademarks, and all proprietary mathematical
-architectures, pipeline parallel slicing workflows, and telemetry gating controllers.
+The Work is source-available strictly for restricted non-commercial evaluation and is
+NEVER sold, dedicated to the public domain, or granted under an open-source license.
+Fractal Compute Orchestrations retains exclusive, complete, and unencumbered ownership of
+all right, title, and interest in and to the Work, including all patents, patent
+applications, copyrights, trade secrets, moral rights, trademarks, wire formats, pipeline
+parallel slicing workflows, and telemetry gating controllers.
 
-1.2. No Implied Rights:
+1.2. No Implied Rights & No Contributor Dilution:
 Nothing in this Agreement grants, by implication, estoppel, or otherwise, any ownership,
-license, patent grant, or commercial right not expressly stipulated herein.
+license, patent grant, trademark right, or commercial right not expressly stipulated
+herein. Submission of feedback, bug reports, or patches does not transfer or dilute
+Fractal Compute Orchestrations' exclusive commercial ownership of the Work.
 
-2. LIMITED NON-COMMERCIAL EVALUATION GRANT
------------------------------------------
-Subject to strict compliance with all provisions of this Agreement, the Licensor grants
-You a revocable, non-exclusive, non-transferable, non-sublicensable, limited personal license
-exclusively for:
-  (a) Non-monetized personal study, educational review, and inspection;
-  (b) Non-commercial academic research conducted at accredited institutions, provided
-      mandatory academic citation and attribution are maintained pursuant to Section 4; and
-  (c) Non-commercial architectural security auditing without compensation or public hosting.
+2. LIMITED NON-COMMERCIAL RESEARCH & STUDY GRANT
+================================================
+Subject to strict compliance with every provision of this Agreement, Fractal Compute
+Orchestrations grants You a revocable, non-exclusive, non-transferable,
+non-sublicensable, limited personal license exclusively for:
+  (a) Non-monetized personal study, educational coursework, and code inspection;
+  (b) Non-commercial academic research conducted at accredited non-profit institutions,
+      provided mandatory academic citation and attribution are maintained under Section 4;
+  (c) Non-commercial security auditing or reproducibility verification without compensation,
+      sponsorship, product integration, or public hosting.
 
-3. STRICT PROHIBITION OF COMMERCIAL EXPLOITATION
-------------------------------------------------
-3.1. Absolute Commercial Exclusion:
-ANY COMMERCIAL USE, DIRECT OR INDIRECT REVENUE GENERATION, OR DEPLOYMENT IN SUPPORT OF
-FOR-PROFIT BUSINESS OPERATIONS WITHOUT A SEPARATELY EXECUTED COMMERCIAL ENTERPRISE LICENSE
-IS STRICTLY PROHIBITED AND CONSTITUTES WILLFUL INFRINGEMENT.
+Any grant under Section 2 IMMEDIATELY TERMINATES if the resulting research, benchmark,
+artifact, or deployment is used directly or indirectly for revenue generation, commercial
+product development, or competitive hosting.
 
-3.2. Prohibited Activities (Including but not limited to):
-  (a) Incorporating, embedding, sublicensing, packaging, or linking the Work (or any derivative
-      work thereof) into any commercial software, product, SDK, or closed-source application;
-  (b) Operating the Work as a hosted service, Software-as-a-Service (SaaS), Platform-as-a-Service
-      (PaaS), API endpoint, or commercial decentralized compute provider;
-  (c) Utilizing the Work to perform paid consulting, computational harvesting services, model
-      slicing services, or federated training for any client or commercial third party;
-  (d) Using the Work in connection with fundraising, commercial ventures, token sales, initial
-      coin offerings, or venture capital pitching without express written consent;
-  (e) Internal operational use within any commercial enterprise, business, firm, or company.
+3. STRICT PROHIBITION OF COMMERCIAL EXPLOITATION & HOSTED SERVICES
+==================================================================
+3.1. Zero-Tolerance Commercial & Corporate Exclusion:
+ANY COMMERCIAL USE, DIRECT OR INDIRECT REVENUE GENERATION, COMPANY CREATION, MANAGED
+HOSTING, OR DEPLOYMENT IN SUPPORT OF FOR-PROFIT BUSINESS OPERATIONS WITHOUT A SEPARATELY
+EXECUTED WRITTEN COMMERCIAL LICENSE FROM FRACTAL COMPUTE ORCHESTRATIONS IS STRICTLY
+PROHIBITED AND CONSTITUTES WILLFUL INFRINGEMENT.
+
+3.2. Explicitly Prohibited Activities (Anti-Hosted-Service & Anti-Startup Shield):
+  (a) Products, SDKs, Wrappers, & Clean-Room Commercial Ports:
+      Incorporating, embedding, wrapping, porting, reimplementing using insights from the
+      Work, sublicensing, packaging, or linking the Work (or any derivative work thereof)
+      into any commercial software, proprietary or open-core product, SDK, library, or SaaS;
+  (b) Hosted, Cloud, Managed, & Wrapper Services (Anti-Cloud-Takeover Clause):
+      Operating, deploying, or making the Work (or any fork, derivative, API wrapper, or
+      quantization/orchestration pipeline built atop it) accessible to third parties as a
+      managed cloud service, Software-as-a-Service (SaaS), Platform-as-a-Service (PaaS),
+      Inference-as-a-Service, remote RPC endpoint, or compute marketplace, whether paid,
+      freemium, ad-supported, token-incentivized, or bundled with a paid offering;
+  (c) Forming or Operating a Company Around the Work or Its Derivatives:
+      Incorporating, founding, funding, pitching, operating, or building enterprise/equity
+      value for any company, startup, corporate subsidiary, or commercial venture whose
+      product, competitive advantage, infrastructure, or revenue relies upon the Work or
+      derivatives/forks created after accessing the Work;
+  (d) Paid Consulting, Compute Harvesting, & Commercial Model Artifacts:
+      Using the Work to deliver paid consulting, integration, support contracts, model
+      slicing, or federated training for third parties, OR selling/monetizing model
+      checkpoints, quantized partitions (.pte / .frqd / .frq4), or telemetry outputs;
+  (e) Internal Business / Enterprise Usage:
+      Internal production, staging, R&D, employee tooling, or operational use inside ANY
+      for-profit company, corporation, firm, or commercial entity (even if nothing is
+      resold externally) or any indirect monetization, cost reduction, or lead generation.
 
 4. MANDATORY ATTRIBUTION & INTEGRITY
-------------------------------------
-You may not remove, alter, or obscure any copyright, author attribution, patent notice,
-trademark, or disclaimer contained within the Work. Any academic publication, technical
-whitepaper, presentation, or public derivative must conspicuously carry the following notice:
+====================================
+You may not remove, alter, or obscure any copyright, attribution, license file, patent
+notice, trademark, or disclaimer contained within the Work. Every academic paper,
+benchmark report, presentation, or authorized non-commercial derivative MUST visibly cite:
   "Fractal: Distributed Computation Harvesting & Model Orchestration.
-   Original Architect & Sole Copyright Owner: Ahmad Hassan (B-Ted),
    Fractal Compute Orchestrations (https://github.com/Fractal-Compute-Orchestrations)."
 
 5. BREACH, INJUNCTIVE RELIEF, AND LEGAL REMEDIES
-------------------------------------------------
+================================================
 5.1. Immediate Injunctive Relief:
-You acknowledge that unauthorized use, commercial deployment, or copying of the Work causes
-irreparable and continuing damage to the Licensor for which monetary remedies alone are inadequate.
-Therefore, in the event of any breach, the Licensor shall be entitled to obtain immediate ex parte
-injunctive relief, asset freezing orders, and preliminary injunctions from any court of competent
-jurisdiction without the requirement of posting a bond.
+Unauthorized use, commercial deployment, managed hosting, or corporate exploitation causes
+irreparable injury to Licensor. Upon any breach, Fractal Compute Orchestrations is entitled
+to immediate ex parte injunctive relief, preliminary injunctions, and asset-freezing
+remedies from any court of competent jurisdiction without bond.
 
-5.2. Monetary Damages and Disgorgement:
-In the event of willful infringement or commercial violation, the Licensor shall be entitled to
-recover all actual damages suffered, all gross revenues and profits earned by You or your affiliates
-arising directly or indirectly from the unauthorized use of the Work, statutory damages to the
-fullest extent permitted by applicable law, and punitive damages.
+5.2. Monetary Damages and Full Profit Disgorgement:
+For any willful infringement or unauthorized commercial exploitation, Fractal Compute
+Orchestrations is entitled to recover all actual damages, 100% of gross revenues,
+cloud/API billings, and profits earned directly or indirectly by You or Your affiliates
+from unauthorized use of the Work, plus statutory and punitive damages to the fullest
+extent permitted by law.
 
 5.3. Legal Fees and Costs:
-If the Licensor initiates legal proceedings, DMCA enforcement, arbitration, or collection actions
-to enforce this Agreement, the prevailing party shall be entitled to recover from the infringing
-party all reasonable attorneys' fees, expert witness fees, court filing costs, and litigation expenses.
+In any legal proceeding, DMCA takedown, arbitration, or enforcement action, the prevailing
+party shall recover reasonable attorneys' fees, expert fees, court costs, and expenses.
 
 6. AUTOMATIC TERMINATION
-------------------------
-Any breach of any term of this Agreement automatically terminates your license with immediate effect
-without notice. Upon termination, You must immediately and permanently delete, destroy, and erase all
-copies of the Work, its derivatives, and all related documentation from all storage devices and networks.
+========================
+Any breach of this Agreement terminates Your rights immediately and automatically without
+notice. Upon termination, You must cease all execution and permanently destroy all copies
+of the Work, forks, weights, containers, and documentation under Your control.
 
 7. DISCLAIMER OF WARRANTIES & LIMITATION OF LIABILITY
------------------------------------------------------
-THE WORK IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
-LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
-IN NO EVENT SHALL THE LICENSOR BE LIABLE FOR ANY CLAIM, DAMAGES, LOSS OF DATA, DEVICE DAMAGE, OR
-INCIDENTAL/CONSEQUENTIAL LIABILITIES ARISING OUT OF OR IN CONNECTION WITH THE USE OF THE WORK.
+=====================================================
+THE WORK IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR
+NON-INFRINGEMENT. IN NO EVENT SHALL FRACTAL COMPUTE ORCHESTRATIONS BE LIABLE FOR ANY
+CLAIM, DAMAGES, LOSS OF DATA, HARDWARE DAMAGE, OR INCIDENTAL/CONSEQUENTIAL DAMAGES ARISING
+FROM USE OF THE WORK.
 
 8. JURISDICTION & COMMERCIAL LICENSING INQUIRIES
-------------------------------------------------
-This Agreement is governed by international intellectual property treaties (including the Berne
-Convention, WIPO Copyright Treaty, and TRIPS Agreement).
+================================================
+This Agreement is governed by international intellectual property treaties (including the
+Berne Convention, WIPO Copyright Treaty, and TRIPS Agreement).
 
-To acquire commercial enterprise licensing, dual-licensing rights, white-label deployment
-permissions, or to discuss strategic IP partnerships, contact:
-  Ahmad Hassan (B-Ted)
-  Lead Architect, Fractal Compute Orchestrations
-  Email: ahmadhassan.bted@gmail.com
+NO THIRD PARTY, CLOUD PROVIDER, OR CORPORATION MAY MONETIZE THIS WORK. To inquire about
+an official Commercial Enterprise License or institutional licensing agreement:
+  Fractal Compute Orchestrations
   GitHub: https://github.com/Fractal-Compute-Orchestrations
+  Licensing Contact: ahmadhassan.bted@gmail.com
